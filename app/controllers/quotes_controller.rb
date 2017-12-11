@@ -26,9 +26,6 @@ class QuotesController < ApplicationController
   end
 
 private
-  def json_response(object, status = :ok)
-    render json: object, status: :ok
-  end
 
   def quote_params
     params.permit(:content :character :episode_of_season :season_number)
