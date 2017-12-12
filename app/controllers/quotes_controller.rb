@@ -2,17 +2,17 @@ class QuotesController < ApplicationController
 
   def index
     @quotes = Quote.all
-    json_response(@quotes)
+    json_response(@quotes, 200)
   end
 
   def show
     @quote = Quote.find(params[:id])
-    json_response(@quote)
+    json_response(@quote, 200)
   end
 
   def create
-    @quote = Quote.create(quote_params)
-    json_response(@quote)
+    @quote = Quote.create!(quote_params)
+    json_response(@quote, 200)
   end
 
   def update
@@ -23,6 +23,7 @@ class QuotesController < ApplicationController
   def destroy
     @quote = Quote.find(params[:id])
     @quote.destroy
+    json_response(@quote)
   end
 
 private
