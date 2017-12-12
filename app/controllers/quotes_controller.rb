@@ -28,6 +28,6 @@ class QuotesController < ApplicationController
 private
 
   def quote_params
-    params.permit(:content :character :episode_of_season :season_number)
+    params.permit(:content, :character, :episode_of_season, :season_number)
   end
 end
